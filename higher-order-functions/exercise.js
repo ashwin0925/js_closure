@@ -71,19 +71,25 @@ var add = function(a, b) { return a + b; }
 reduce(nums, add, 0); 
 
 //Extension 3
-function intersection(array1,array2,array3) {
-    var a =array1.filter(value => array2.includes(value))
-    return a.filter(value => array3.includes(value))
-    }
+function intersection(...arrays){
+    return arrays.reduce((acc,cv) =>{
+    return acc.filter(value => cv.includes(value))
+    })
+}
+// function intersection(array1,array2,array3) {
+//     var a =array1.filter(value => array2.includes(value))
+//     return a.filter(value => array3.includes(value))
+//     }
 
 // console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
 // should log: [5, 15]
 
 //Extension 4
-function union(arr1,arr2,arr3){
-var concat_array = [...arr1, ...arr2, ...arr3];
-var array_union = [...new Set(concat_array)];
-return array_union
+function union(...arrays){
+return arrays.reduce((acc,cv) =>{
+cv.filter(v => !acc.includes(v)?acc.push(v):acc);
+return acc;
+})
 }
 
 // console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));

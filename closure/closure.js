@@ -27,12 +27,22 @@ var blabAgainLater = nonsense('to class');
 blabAgainLater()
 
 // 4
-function firstName(str1){
-    return function (str2)
-{
-    return str1 + ' '+str2;
+var lastNameTrier = function(firstName){
+    var innerFunction = function(lastName){
+        return firstName+ ' '+ lastName
+    }
+    return innerFunction;
 }
-}
-
-var nam = firstName('ashwin')('kumar');
-console.log(nam);
+var firstNameFarmer = lastNameTrier('Farmer');
+    firstNameFarmer('Brown');
+    
+// 5
+function storyWriter(str=''){
+    return {addWords :function add(str1){
+        return str = str + str1
+    },
+    earse:function ears(){
+        return str = '';
+        }
+    }
+    }
