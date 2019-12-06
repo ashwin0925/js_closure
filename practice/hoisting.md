@@ -6,19 +6,19 @@
 console.log(animal);
 var animal = "monkey";
 // Output or Error Message
-```
+``` undefined
 
 ```js
 console.log(animal);
 let animal = "monkey";
 // Output or Error Message
-```
+``` Cannot access 'animal' before initialization
 
 ```js
 console.log(animal);
 const animal = "monkey";
 // Output or Error Message
-```
+```Cannot access 'animal' before initialization
 
 ```js
 function sayHello(msg) {
@@ -26,7 +26,7 @@ function sayHello(msg) {
 }
 sayHello("Hey Everyone");
 // Output or Error Message
-```
+```Hey Everyone
 
 ```js
 sayHello("Hey Everyone");
@@ -34,7 +34,7 @@ function sayHello(msg) {
   alert(msg);
 }
 // Output or Error Message
-```
+```Hey Everyone
 
 ```js
 sayHello("Hey Everyone");
@@ -42,11 +42,11 @@ var sayHello = msg => {
   alert(msg);
 };
 // Output or Error Message
-```
+```sayHello is not a function
 
 ```js
 sayHello("Hey Everyone");
 let sayHello = msg => {
   alert(msg);
 };
-```
+```Cannot access 'sayHello' before initialization

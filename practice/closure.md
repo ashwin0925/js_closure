@@ -4,6 +4,12 @@
 
 ```js
 // Your code goes here
+function multiplyBy(num){
+  return function inner(a){
+    return num * a;
+  }
+}
+console.log(final) // 30
 
 const double = multiplyBy(2);
 const final = double(15); // final should be 30
@@ -13,6 +19,12 @@ const final = double(15); // final should be 30
 
 ```js
 // Your code goes here
+function fullName(firstName){
+  return function(lastName){
+    return firstName+' ' +lastName
+  }
+}
+console.log(final)
 
 const name = fullName("Will");
 const final = name("Smith"); // final should be "Will Smith"
@@ -22,7 +34,14 @@ const final = name("Smith"); // final should be "Will Smith"
 
 ```js
 function isInBetween(a, b) {
-  // your code goes here
+   function check(c){
+    if(a <= c && c <= b){
+    return true;
+  }else{
+  return false;
+  }
+}
+  return check;
 }
 
 const isChild = isInBetween(10, 100);
@@ -35,7 +54,9 @@ isChild(103); // false
 
 ```js
 function letsWishThem(greeting) {
-  // your code goes here
+  return function(message){
+    return greeting+" "+message
+  }
 }
 
 const callWithHey = letsWishThem("Hey");
@@ -48,7 +69,12 @@ callWithHello("How Are You?"); // Hello How Are You?
 
 ```js
 function addGame(gameName) {
-  // your code goes here
+  let count1 = 0;
+  function count(){
+    count1 = count1 + 1;
+    console.log(`Your score of ${gameName} is ${count1}`)
+  }
+  return count;
 }
 
 // Output
@@ -64,7 +90,26 @@ cricket(); // Your score of Cricket is 2
 
 ```js
 function getCard(suit) {
-  // your code goes here
+  if(suit == "Club" || suit == "Spade" || suit == "heart" || suit == "diamond"){
+  function randomIntFromInterval(min=2, max=14) {
+  var myVal = Math.floor(Math.random() * (max - min + 1) + min);
+  if(myVal === 11 ){
+  myVal = 'J'
+  }
+  else if(myVal === 12 ){
+     myVal = 'Q'
+  }
+  else if(myVal === 13 ){
+     myVal = 'K'
+  }
+  else if(myVal === 14){
+    myVal = 'A'
+  }
+  else  myVal == myVal
+
+  return `${myVal} ${suit}`
+}
+return randomIntFromInterval()
 }
 
 // Output
