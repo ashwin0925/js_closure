@@ -96,7 +96,7 @@ return acc;
 // should log: [5, 10, 15, 88, 1, 7, 100]
 
 //Extension 5
-function objOfMatches(array1, array2, callback) {
+function objOfMatches(array1, array2, callback) {https://github.com/AltCampus/js_closure.git
     let object = {}
     for (let i = 0; i < array1.length; i++) {
       if (callback(array1[i]) === array2[i]) {
@@ -110,7 +110,13 @@ function objOfMatches(array1, array2, callback) {
 // should log: { hi: 'HI', bye: 'BYE', later: 'LATER' }
 
 //Extension 6
-function multiMap(arrVals, arrCallbacks) {}
+
+function multiMap(arrVals, arrCallbacks) {
+  var obj = {}
+  arrVals.forEach(val => { obj[val] = [arrCallbacks.map(arrCallback => arrCallbacks(val))]
+  });
+  return obj;
+}
 
 // console.log(multiMap(['catfood', 'glue', 'beer'], [function(str) { return str.toUpperCase(); }, function(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }, function(str) { return str + str; }]));
 // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
